@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "module": "es6",
+        "target": "es6",
+        "jsx": "react",
+        "baseUrl": "./src",
+        "paths": {
+            "components": [
+                "components/*"
+            ],
+            "actions": [
+                "actions/*"
+            ],
+            "models": [
+                "models/*"
+            ],
+            "customTypes": [
+                "customTypes/*"
+            ],
+            "reducers": [
+                "reducers/*"
+            ],
+            "sagas": [
+                "sagas/*"
+            ],
+            "containers": [
+                "containers/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "useCache": true,
+        "useBabel": true
+    }
+}
