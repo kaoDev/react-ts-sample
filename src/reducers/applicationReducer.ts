@@ -6,7 +6,7 @@ export const reduceApplicationState = (state: ApplicationState = initialAppState
     switch (action.type) {
         case types.TEXT_CHANGED:
             const textAction = action as Action<string>
-            return new ApplicationState(textAction.payload)
+            return new ApplicationState(textAction.payload || '')
         default:
             return state
     }

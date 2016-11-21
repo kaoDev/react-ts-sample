@@ -10,7 +10,7 @@ export function* changeTextAsync(text: string) {
 }
 
 export function* watchTextChange() {
-    let task: Task<any>
+    let task: Task<any> | undefined
     while (true) {
         const { payload } = (yield take(INPUT_CHANGED)) as Action<string>
         if (task) {

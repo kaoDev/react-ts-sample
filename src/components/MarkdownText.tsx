@@ -15,14 +15,14 @@ marked.setOptions({
 export class MarkdownText extends Component<MarkdownTextProps, {}> {
 
     render() {
-        const parsedMarkdown = marked.parse(this.props.text || '');
+        const parsedMarkdown = marked.parse(this.props.text || '')
 
         const mergedStyle: React.CSSProperties = Object.assign({
             color: 'black'
-        }, this.props.style);
+        }, this.props.style)
 
         return (
             <div style={mergedStyle} dangerouslySetInnerHTML={{ __html: parsedMarkdown }} />
-        );
+        )
     }
 }

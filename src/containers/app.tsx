@@ -1,14 +1,14 @@
 import * as React from 'react'
 import { Component } from 'react'
 import { connect, Dispatch } from 'react-redux'
-import { Store, compose } from 'redux';
+import { Store, compose } from 'redux'
 import { ApplicationState } from 'models/applicationState'
 import { inputChanged } from 'actions/actionCreators'
 import { MarkdownText } from 'components/MarkdownText'
 import { TextArea } from 'components/TextArea'
-import { Action } from 'redux-actions';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Paper from 'material-ui/Paper';
+import { Action } from 'redux-actions'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Paper from 'material-ui/Paper'
 
 interface IAppProps {
     text: string
@@ -24,7 +24,7 @@ const mapStateToProps = (state: ApplicationState) => {
 class AppComponent extends Component<IAppProps, {}> {
 
     private onValueChanged = (value: string) => {
-        const {dispatch} = this.props;
+        const {dispatch} = this.props
         if (dispatch) {
             dispatch(inputChanged(value))
         }
@@ -73,4 +73,4 @@ class AppComponent extends Component<IAppProps, {}> {
     }
 }
 
-export const App = connect(mapStateToProps)(AppComponent);
+export const App = connect(mapStateToProps)(AppComponent)

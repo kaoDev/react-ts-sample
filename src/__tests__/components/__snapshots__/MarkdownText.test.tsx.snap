@@ -1,0 +1,14 @@
+exports[`test Link changes the class when hovered 1`] = `
+<div
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<h1 id=\"headline\">headline</h1>
+    ",
+    }
+  }
+  style={
+    Object {
+      "color": "black",
+    }
+  } />
+`;

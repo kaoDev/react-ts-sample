@@ -2,6 +2,7 @@
     "compilerOptions": {
         "sourceMap": true,
         "noImplicitAny": true,
+        "strictNullChecks": true,
         "moduleResolution": "node",
         "module": "es6",
         "target": "es6",
@@ -17,9 +18,6 @@
             "models": [
                 "models/*"
             ],
-            "customTypes": [
-                "customTypes/*"
-            ],
             "reducers": [
                 "reducers/*"
             ],
@@ -28,6 +26,9 @@
             ],
             "containers": [
                 "containers/*"
+            ],
+            "declarations": [
+                "declarations/*"
             ]
         }
     },
@@ -35,6 +36,9 @@
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx"
+    ],
+    "ignore": [
+        "src/__tests__/**/*.*"
     ],
     "awesomeTypescriptLoaderOptions": {
         "useCache": true,
