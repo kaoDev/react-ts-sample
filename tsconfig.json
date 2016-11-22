@@ -19,8 +19,8 @@
     },
     "include": [
         "src/**/*.ts",
-        "declarations/**/*.d.ts",
-        "src/**/*.tsx"
+        "src/**/*.tsx",
+        "declarations/**/*.d.ts"
     ],
     "awesomeTypescriptLoaderOptions": {
         "useCache": true,
