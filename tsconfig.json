@@ -7,7 +7,6 @@
         "module": "es6",
         "target": "es6",
         "jsx": "react",
-        "rootDir": ".",
         "baseUrl": ".",
         "paths": {
             "*": [

@@ -5,10 +5,6 @@ import { MarkdownText } from 'components/MarkdownText'
 test('MarkdownText renders text', () => {
     const textValue = '# headline\ntext'
 
-    const onChange = () => {
-
-    }
-
     const component = renderer.create(
         <MarkdownText text={textValue} />
     )

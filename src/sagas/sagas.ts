@@ -1,23 +1,17 @@
-import { takeEvery, delay, Task } from 'redux-saga'
+import { ApplicationState } from './../models/applicationState';
+import { delay, Task, takeLatest, Saga } from 'redux-saga'
 import { put, cancel, take, fork, call } from 'redux-saga/effects'
 import { Action } from 'redux-actions'
 import { textChanged, inputChanged } from 'actions/actionCreators'
 import { INPUT_CHANGED } from 'actions/actionTypes'
 
-export function* changeTextAsync(text: string) {
+export function* changeTextAsync(textAction: Action<string>): Iterable<any> {
     yield call(delay, 150)
-    yield put(textChanged(text))
+    yield put(textChanged(textAction.payload || ''))
 }
 
 export function* watchTextChange() {
-    let task: Task<any> | undefined
-    while (true) {
-        const { payload } = (yield take(INPUT_CHANGED)) as Action<string>
-        if (task) {
-            yield cancel(task)
-        }
-        task = yield fork(changeTextAsync, payload)
-    }
+    yield takeLatest(INPUT_CHANGED, changeTextAsync as any)
 }
 
 export function* rootSaga() {
