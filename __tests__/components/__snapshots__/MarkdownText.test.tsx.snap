@@ -1,4 +1,4 @@
-exports[`test Link changes the class when hovered 1`] = `
+exports[`test MarkdownText renders text 1`] = `
 <div
   dangerouslySetInnerHTML={
     Object {

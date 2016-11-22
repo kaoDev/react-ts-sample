@@ -4,18 +4,28 @@
   "description": "Small sample to show usage of react with typescript",
   "scripts": {
     "start": "node server.js",
-    "test": "jest --no-cache --coverage"
+    "test": "jest --coverage"
   },
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "node_modules/typescript-babel-jest"
     },
+    "moduleDirectories": [
+      "node_modules",
+      "src",
+      "src/components",
+      "src/containers",
+      "src/models",
+      "src/reducers",
+      "src/sagas",
+      "src/store"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
       "js"
     ],
-    "testRegex": "/src/__tests__/.*\\.test\\.(ts|tsx)$"
+    "testRegex": "/__tests__/.*\\.test\\.(ts|tsx)$"
   },
   "author": "",
   "license": "MIT",

@@ -7,38 +7,20 @@
         "module": "es6",
         "target": "es6",
         "jsx": "react",
-        "baseUrl": "./src",
+        "rootDir": ".",
+        "baseUrl": ".",
         "paths": {
-            "components": [
-                "components/*"
-            ],
-            "actions": [
-                "actions/*"
-            ],
-            "models": [
-                "models/*"
-            ],
-            "reducers": [
-                "reducers/*"
-            ],
-            "sagas": [
-                "sagas/*"
-            ],
-            "containers": [
-                "containers/*"
-            ],
-            "declarations": [
+            "*": [
+                "*",
+                "src/*",
                 "declarations/*"
             ]
         }
     },
     "include": [
         "src/**/*.ts",
-        "src/**/*.d.ts",
+        "declarations/**/*.d.ts",
         "src/**/*.tsx"
-    ],
-    "ignore": [
-        "src/__tests__/**/*.*"
     ],
     "awesomeTypescriptLoaderOptions": {
         "useCache": true,

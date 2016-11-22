@@ -1,11 +1,11 @@
 import { takeEvery, delay, Task } from 'redux-saga'
-import { put, cancel, take, fork } from 'redux-saga/effects'
+import { put, cancel, take, fork, call } from 'redux-saga/effects'
 import { Action } from 'redux-actions'
 import { textChanged, inputChanged } from 'actions/actionCreators'
 import { INPUT_CHANGED } from 'actions/actionTypes'
 
 export function* changeTextAsync(text: string) {
-    yield delay(150)
+    yield call(delay, 150)
     yield put(textChanged(text))
 }
 
