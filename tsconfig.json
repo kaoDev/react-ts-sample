@@ -21,6 +21,9 @@
         "src/**/*.tsx",
         "declarations/**/*.d.ts"
     ],
+    "ignore": [
+        "__tests__"
+    ],
     "awesomeTypescriptLoaderOptions": {
         "useCache": true,
         "useBabel": true

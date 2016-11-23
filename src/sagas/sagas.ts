@@ -5,7 +5,7 @@ import { Action } from 'redux-actions'
 import { textChanged, inputChanged } from 'actions/actionCreators'
 import { INPUT_CHANGED } from 'actions/actionTypes'
 
-export function* changeTextAsync(textAction: Action<string>): Iterable<any> {
+export function* changeTextAsync(textAction: Action<string>) {
     yield call(delay, 150)
     yield put(textChanged(textAction.payload || ''))
 }

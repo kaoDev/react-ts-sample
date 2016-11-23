@@ -3,6 +3,7 @@ exports[`test MarkdownText renders text 1`] = `
   dangerouslySetInnerHTML={
     Object {
       "__html": "<h1 id=\"headline\">headline</h1>
+    <p>text</p>
     ",
     }
   }

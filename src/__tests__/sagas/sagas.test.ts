@@ -6,7 +6,8 @@ import { delay } from 'redux-saga'
 
 test('changeTextAsync acts correctly', () => {
     const textValue = 'text'
-    const generator = changeTextAsync(textValue)
+
+    const generator = changeTextAsync(textChanged(textValue))
 
     expect(generator.next().value).toEqual(call(delay, 150))
 
