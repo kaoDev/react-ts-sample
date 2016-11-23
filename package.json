@@ -7,6 +7,10 @@
     "build": "./node_modules/.bin/webpack",
     "test": "jest --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KalleOtt/react-ts-sample.git"
+  },
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "node_modules/typescript-babel-jest"
