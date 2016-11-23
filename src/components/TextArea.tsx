@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Component, CSSProperties } from 'react'
-import TextField from 'material-ui/TextField'
+import { Input } from 'react-toolbox/lib/input'
 
 export interface TextAreaProps {
     lineHeight?: string
@@ -10,8 +10,6 @@ export interface TextAreaProps {
     id?: string
     value?: string
     style?: React.CSSProperties
-    rows?: number
-    rowsMax?: number
 }
 
 interface TextAreaState {
@@ -29,8 +27,7 @@ export class TextArea extends Component<TextAreaProps, TextAreaState> {
         this.setState({ value: value || '' })
     }
 
-    private changeHandler = (event: React.FormEvent<HTMLTextAreaElement>) => {
-        const value = (event.target as HTMLTextAreaElement).value
+    private changeHandler = (value: string) => {
         this.setState({ value })
         const {onChange} = this.props
         onChange(value)
@@ -38,11 +35,12 @@ export class TextArea extends Component<TextAreaProps, TextAreaState> {
 
     static style: CSSProperties = {
         maxHeight: '100%',
+        height: '100%',
         overflow: 'auto'
     }
 
     render() {
-        const {disabled, name, id, style, lineHeight, rows, rowsMax} = this.props
+        const {disabled, name, id, style, lineHeight} = this.props
         const {value} = this.state
         const mergedStyle: CSSProperties = Object.assign({}, TextArea.style, style)
 
@@ -52,18 +50,14 @@ export class TextArea extends Component<TextAreaProps, TextAreaState> {
         }
 
         return (
-            <TextField
+            <Input
+                type={'text'}
                 style={mergedStyle}
-                inputStyle={textAreaStyle}
-                multiLine={true}
+                multiline={true}
                 disabled={disabled}
                 value={value}
                 name={name}
-                id={id}
                 onChange={this.changeHandler}
-                fullWidth={true}
-                rows={rows}
-                rowsMax={rowsMax}
                 />
         )
     }

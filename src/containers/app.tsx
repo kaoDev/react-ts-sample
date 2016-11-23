@@ -7,8 +7,8 @@ import { inputChanged } from 'actions/actionCreators'
 import { MarkdownText } from 'components/MarkdownText'
 import { TextArea } from 'components/TextArea'
 import { Action } from 'redux-actions'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Paper from 'material-ui/Paper'
+import { Card } from 'react-toolbox'
+import 'react-toolbox/lib/commons.scss';
 
 interface IAppProps {
     text: string
@@ -57,18 +57,16 @@ class AppComponent extends Component<IAppProps, {}> {
         }
 
         return (
-            <MuiThemeProvider>
-                <div style={columnStyle} >
-                    <div style={editorWrapperStyle}>
-                        <Paper style={paperStyle}>
-                            <TextArea rows={23} rowsMax={23} onChange={this.onValueChanged} value={text} />
-                        </Paper>
-                        <Paper style={paperStyle}>
-                            <MarkdownText text={text} />
-                        </Paper>
-                    </div>
+            <div style={columnStyle} >
+                <div style={editorWrapperStyle}>
+                    <Card style={paperStyle}>
+                        <TextArea onChange={this.onValueChanged} value={text} />
+                    </Card>
+                    <Card style={paperStyle}>
+                        <MarkdownText text={text} />
+                    </Card>
                 </div>
-            </MuiThemeProvider>
+            </div>
         )
     }
 }
