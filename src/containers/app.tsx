@@ -8,7 +8,7 @@ import { MarkdownText } from 'components/MarkdownText'
 import { TextArea } from 'components/TextArea'
 import { Action } from 'redux-actions'
 import { Card } from 'react-toolbox'
-import 'react-toolbox/lib/commons.scss';
+import 'react-toolbox/lib/commons.scss'
 
 interface IAppProps {
     text: string

@@ -1,8 +1,8 @@
-const webpack = require('webpack');
-const path = require('path');
-const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin
+const autoprefixer = require('autoprefixer')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: [
@@ -70,4 +70,4 @@ module.exports = {
     sassLoader: {
         includePaths: [path.resolve(__dirname, './src')]
     },
-};
+}

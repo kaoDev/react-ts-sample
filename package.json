@@ -30,7 +30,7 @@
       "tsx",
       "js"
     ],
-    "testRegex": "/__tests__/.*\\.test\\.(ts|tsx)$"
+    "testRegex": "/src/__tests__/.*\\.test\\.(ts|tsx|js|jsx)$"
   },
   "author": "",
   "license": "MIT",

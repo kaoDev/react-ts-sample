@@ -1,8 +1,7 @@
-import { ApplicationState } from './../models/applicationState';
-import { delay, Task, takeLatest, Saga } from 'redux-saga'
-import { put, cancel, take, fork, call } from 'redux-saga/effects'
+import { delay, takeLatest } from 'redux-saga'
+import { put, call } from 'redux-saga/effects'
 import { Action } from 'redux-actions'
-import { textChanged, inputChanged } from 'actions/actionCreators'
+import { textChanged } from 'actions/actionCreators'
 import { INPUT_CHANGED } from 'actions/actionTypes'
 
 export function* changeTextAsync(textAction: Action<string>) {
