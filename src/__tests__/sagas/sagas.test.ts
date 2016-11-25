@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import { textChanged } from 'actions/actionCreators';
+import { textChanged } from 'actions/actionCreators'
 import { changeTextAsync } from 'sagas/sagas'
 import { put, call } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
