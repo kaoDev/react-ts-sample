@@ -1,4 +1,4 @@
-exports[`test MarkdownText renders text 1`] = `
+exports[`MarkdownText shall render text Snapshot test 1`] = `
 <div
   dangerouslySetInnerHTML={
     Object {

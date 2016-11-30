@@ -4,12 +4,16 @@ import { changeTextAsync } from 'sagas/sagas'
 import { put, call } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 
-test('changeTextAsync acts correctly', () => {
+describe('test debouncing of text input', () => {
     const textValue = 'text'
 
     const generator = changeTextAsync(textChanged(textValue))
 
-    expect(generator.next().value).toEqual(call(delay, 150))
+    test('delay is called', () => {
+        expect(generator.next().value).toEqual(call(delay, 150))
+    })
 
-    expect(generator.next().value).toEqual(put(textChanged(textValue)))
+    test('text change is called', () => {
+        expect(generator.next().value).toEqual(put(textChanged(textValue)))
+    })
 })
