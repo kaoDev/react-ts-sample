@@ -1,9 +1,15 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "sourceMap": false,
         "noImplicitAny": true,
         "strictNullChecks": true,
         "moduleResolution": "node",
+        "allowUnusedLabels": false,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "module": "es6",
         "target": "es6",
         "jsx": "react",
@@ -20,9 +26,6 @@
         "src/**/*.ts",
         "src/**/*.tsx",
         "declarations/**/*.d.ts"
-    ],
-    "ignore": [
-        "__tests__"
     ],
     "awesomeTypescriptLoaderOptions": {
         "useCache": true,

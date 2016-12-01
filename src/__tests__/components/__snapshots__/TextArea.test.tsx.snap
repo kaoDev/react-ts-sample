@@ -1,0 +1,18 @@
+exports[`TextArea shall render text Snapshot test 1`] = `
+<Input
+  disabled={undefined}
+  multiline={true}
+  name={undefined}
+  onChange={[Function]}
+  style={
+    Object {
+      "height": "100%",
+      "maxHeight": "100%",
+      "overflow": "auto",
+    }
+  }
+  theme={Object {}}
+  type="text"
+  value="# headline
+text" />
+`;

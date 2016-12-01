@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "build2": "./node_modules/.bin/webpack",
-    "test": "jest --coverage"
+    "test": "jest --coverage --no-cache"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,12 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.(ts|tsx)$": "node_modules/typescript-babel-jest"
+      "^.+\\.(ts|tsx)$": "node_modules/typescript-babel-jest",
+      "^.+\\.(js|jsx)$": "node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "src/__mocks__/fileMock.js",
+      "\\.(s?css|less)$": "identity-obj-proxy"
     },
     "moduleDirectories": [
       "node_modules",
@@ -28,9 +33,10 @@
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "js"
+      "js",
+      "jsx"
     ],
-    "testRegex": "/src/__tests__/.*\\.test\\.(ts|tsx|js|jsx)$"
+    "testRegex": "src/__tests__/.*\\.test\\.(ts|tsx|js|jsx)$"
   },
   "author": "",
   "license": "MIT",
@@ -51,6 +57,7 @@
     "awesome-typescript-loader": "2.2.4",
     "babel": "6.5.2",
     "babel-core": "6.18.2",
+    "babel-jest": "^17.0.2",
     "babel-loader": "6.2.8",
     "babel-plugin-transform-regenerator": "6.16.1",
     "babel-polyfill": "6.16.0",
@@ -60,6 +67,7 @@
     "css-loader": "^0.26.0",
     "express": "4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "identity-obj-proxy": "^3.0.0",
     "immutability-helper": "^2.0.0",
     "jest": "17.0.3",
     "marked": "0.3.6",

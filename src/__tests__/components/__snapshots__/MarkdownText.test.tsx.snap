@@ -2,7 +2,7 @@ exports[`MarkdownText shall render text Snapshot test 1`] = `
 <div
   dangerouslySetInnerHTML={
     Object {
-      "__html": "<h1 id=\"headline\">headline</h1>
+      "__html": "<h1 id="headline">headline</h1>
     <p>text</p>
     ",
     }
