@@ -11,7 +11,7 @@ import 'react-toolbox/lib/commons.scss';
 
 interface IAppProps {
     text: string;
-    inputChanged: typeof inputChanged
+    inputChanged: typeof inputChanged;
     dispatch: Dispatch<Store<ApplicationState>>;
 }
 

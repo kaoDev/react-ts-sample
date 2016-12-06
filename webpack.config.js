@@ -50,7 +50,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts(x?)$/,
-                exclude: /node_modules/,
+                exclude: /(node_modules|__tests__)/,
                 loader: 'awesome-typescript-loader'
             },
             {

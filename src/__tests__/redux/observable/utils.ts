@@ -9,7 +9,7 @@ export type MarbleValues = {
     error?: any
 };
 
-export const expectEpic = <T>(epic: ScheduledEpic<T>, input: MarbleValues, output: MarbleValues, store: MiddlewareAPI<any>) => {
+export const expectEpic = <T>(epic: ScheduledEpic<T>, input: MarbleValues, output: MarbleValues, store?: MiddlewareAPI<any>) => {
     const testScheduler = new TestScheduler((actual, expected) => {
         return expect(actual).toEqual(expected);
     });

@@ -26,10 +26,6 @@
         "src/**/*.tsx",
         "declarations/**/*.d.ts"
     ],
-    "exclude": [
-        "src/__tests__/**/*",
-        "src/__mocks__/**/*"
-    ],
     "awesomeTypescriptLoaderOptions": {
         "useCache": true,
         "useBabel": true
