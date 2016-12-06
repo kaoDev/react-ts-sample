@@ -1,8 +1,8 @@
-const webpack = require('webpack')
-const path = require('path')
-const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin
-const autoprefixer = require('autoprefixer')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack');
+const path = require('path');
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -10,12 +10,12 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
-        './src/index.tsx',
+        './src/index.tsx'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/static/',
+        publicPath: '/static/'
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -43,7 +43,7 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('development')
             }
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ],
 
     module: {
@@ -69,5 +69,5 @@ module.exports = {
     postcss: [autoprefixer],
     sassLoader: {
         includePaths: [path.resolve(__dirname, './src')]
-    },
-}
+    }
+};
