@@ -21,16 +21,24 @@
       "\\.(s?css|less)$": "identity-obj-proxy"
     },
     "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}"
+      "src/*.{ts,tsx}",
+      "src/actions/*.{ts,tsx}",
+      "src/components/*.{ts,tsx}",
+      "src/containers/*.{ts,tsx}",
+      "src/models/*.{ts,tsx}",
+      "src/reducers/*.{ts,tsx}",
+      "src/redux/*.{ts,tsx}",
+      "src/store/*.{ts,tsx}"
     ],
     "moduleDirectories": [
       "node_modules",
       "src",
+      "src/actions",
       "src/components",
       "src/containers",
       "src/models",
       "src/reducers",
-      "src/sagas",
+      "src/redux",
       "src/store"
     ],
     "moduleFileExtensions": [

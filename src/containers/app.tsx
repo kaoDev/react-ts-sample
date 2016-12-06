@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { Store, Dispatch } from 'redux';
+import { Store, Dispatch, bindActionCreators } from 'redux';
 import { ApplicationState } from 'models/applicationState';
 import { inputChanged } from 'actions/actionCreators';
 import { MarkdownText } from 'components/MarkdownText';
@@ -11,7 +11,12 @@ import 'react-toolbox/lib/commons.scss';
 
 interface IAppProps {
     text: string;
-    dispatch?: Dispatch<Store<ApplicationState>>;
+    inputChanged: typeof inputChanged
+    dispatch: Dispatch<Store<ApplicationState>>;
+}
+
+const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+    return { inputChanged: bindActionCreators(inputChanged, dispatch) }
 }
 
 const mapStateToProps = (state: ApplicationState) => {
@@ -23,9 +28,9 @@ const mapStateToProps = (state: ApplicationState) => {
 class AppComponent extends Component<IAppProps, {}> {
 
     private onValueChanged = (value: string) => {
-        const {dispatch} = this.props;
-        if (dispatch) {
-            dispatch(inputChanged(value));
+        const {inputChanged} = this.props;
+        if (inputChanged) {
+            inputChanged(value);
         }
     }
 
@@ -70,4 +75,4 @@ class AppComponent extends Component<IAppProps, {}> {
     }
 }
 
-export const App = connect(mapStateToProps)(AppComponent);
+export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent);
