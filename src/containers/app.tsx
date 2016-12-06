@@ -16,7 +16,7 @@ interface IAppProps {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
-    return { inputChanged: bindActionCreators(inputChanged, dispatch) }
+    return { inputChanged: bindActionCreators(inputChanged, dispatch) };
 };
 
 const mapStateToProps = (state: ApplicationState) => {

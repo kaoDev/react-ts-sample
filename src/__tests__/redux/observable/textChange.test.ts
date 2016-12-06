@@ -1,11 +1,20 @@
+import configureMockStore from 'redux-mock-store';
+import { IStore } from 'redux-mock-store';
 import { createEpicMiddleware } from 'redux-observable';
 import { textChangedEpic } from 'redux/observable/textChange';
 import { inputChanged, textChanged } from 'actions/actionCreators';
 import { expectEpic, f } from './utils';
 
 const epicMiddleware = createEpicMiddleware(textChangedEpic);
+const mockStore = configureMockStore([epicMiddleware]);
 
 describe('input is debounced', () => {
+
+    let store: IStore<{}>;
+
+    beforeEach(() => {
+        store = mockStore();
+    });
 
     afterEach(() => {
         epicMiddleware.replaceEpic(textChangedEpic);
@@ -25,6 +34,6 @@ describe('input is debounced', () => {
             c: textChanged('abc')
         };
 
-        expectEpic(textChangedEpic, { marbles: i, values: inputValues }, { marbles: o, values: outputValues });
+        expectEpic(textChangedEpic, { marbles: i, values: inputValues }, { marbles: o, values: outputValues }, store);
     });
 });
