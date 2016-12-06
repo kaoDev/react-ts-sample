@@ -1,51 +1,50 @@
-import * as React from 'react'
-import { Component } from 'react'
-import { connect } from 'react-redux'
-import { Store, compose, Dispatch } from 'redux'
-import { ApplicationState } from 'models/applicationState'
-import { inputChanged } from 'actions/actionCreators'
-import { MarkdownText } from 'components/MarkdownText'
-import { TextArea } from 'components/TextArea'
-import { Action } from 'redux-actions'
-import { Card } from 'react-toolbox'
-import 'react-toolbox/lib/commons.scss'
+import * as React from 'react';
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import { Store, Dispatch } from 'redux';
+import { ApplicationState } from 'models/applicationState';
+import { inputChanged } from 'actions/actionCreators';
+import { MarkdownText } from 'components/MarkdownText';
+import { TextArea } from 'components/TextArea';
+import { Card } from 'react-toolbox';
+import 'react-toolbox/lib/commons.scss';
 
 interface IAppProps {
-    text: string
-    dispatch?: Dispatch<Store<ApplicationState>>
+    text: string;
+    dispatch?: Dispatch<Store<ApplicationState>>;
 }
 
 const mapStateToProps = (state: ApplicationState) => {
     return {
         text: state.text
-    }
-}
+    };
+};
 
 class AppComponent extends Component<IAppProps, {}> {
 
     private onValueChanged = (value: string) => {
-        const {dispatch} = this.props
+        const {dispatch} = this.props;
         if (dispatch) {
-            dispatch(inputChanged(value))
+            dispatch(inputChanged(value));
         }
     }
 
     render() {
-        const {text} = this.props
+        const {text} = this.props;
 
         const columnStyle: React.CSSProperties = {
             display: 'flex',
             flexDirection: 'column',
             height: '600px',
             width: '100%'
-        }
+        };
 
         const editorWrapperStyle: React.CSSProperties = {
             display: 'flex',
             height: '100%',
             flexGrow: 1,
             justifyContent: 'space-around'
-        }
+        };
 
         const paperStyle: React.CSSProperties = {
             height: '100%',
@@ -54,7 +53,7 @@ class AppComponent extends Component<IAppProps, {}> {
             width: 'calc(50% - 10px)',
             maxWidth: '800px',
             boxSizing: 'border-box',
-        }
+        };
 
         return (
             <div style={columnStyle} >
@@ -67,8 +66,8 @@ class AppComponent extends Component<IAppProps, {}> {
                     </Card>
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export const App = connect(mapStateToProps)(AppComponent)
+export const App = connect(mapStateToProps)(AppComponent);

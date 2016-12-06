@@ -1,2 +1,2 @@
-export const TEXT_CHANGED = 'TEXT_CHANGED'
-export const INPUT_CHANGED = 'INPUT_CHANGED'
+export const TEXT_CHANGED = 'TEXT_CHANGED';
+export const INPUT_CHANGED = 'INPUT_CHANGED';

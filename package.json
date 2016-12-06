@@ -4,8 +4,8 @@
   "description": "Small sample to show usage of react with typescript",
   "scripts": {
     "start": "node server.js",
-    "build2": "./node_modules/.bin/webpack",
-    "test": "jest --coverage --no-cache"
+    "build": "webpack",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -51,6 +51,7 @@
     "@types/redux": "3.6.31",
     "@types/redux-actions": "0.8.33",
     "@types/redux-devtools": "3.0.35",
+    "@types/redux-mock-store": "0.0.7",
     "@types/redux-saga": "0.9.30",
     "@types/webpack": "2.0.0",
     "autoprefixer": "^6.5.3",
@@ -85,7 +86,10 @@
     "redux": "3.6.0",
     "redux-actions": "1.0.1",
     "redux-devtools": "3.3.1",
+    "redux-mock-store": "^1.2.1",
+    "redux-observable": "^0.12.2",
     "redux-saga": "0.13.0",
+    "rxjs": "^5.0.0-rc.4",
     "sass-loader": "^4.0.2",
     "source-map-loader": "0.1.5",
     "style-loader": "^0.13.1",
