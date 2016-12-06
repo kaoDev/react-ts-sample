@@ -9,8 +9,8 @@ To Choose the wanted implementation change the import of
 ```createApplicationStore``` to the wanted technology. At the moment there are 2 
 stores available:
 
-1. [```reduxObservableStore.ts```](blob/master/src/store/reduxObservableStore.ts)
-2. [```reduxSagaStore.ts```](blob/master/src/store/reduxSagaStore.ts)
+1. [```reduxObservableStore.ts```](src/store/reduxObservableStore.ts)
+2. [```reduxSagaStore.ts```](src/store/reduxSagaStore.ts)
 
 
 startup sample:
