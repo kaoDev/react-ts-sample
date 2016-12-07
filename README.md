@@ -1,6 +1,7 @@
-![build status](https://travis-ci.org/KalleOtt/react-ts-sample.svg?branch=master)
+[![build status](https://travis-ci.org/KalleOtt/react-ts-sample.svg?branch=master)](https://travis-ci.org/KalleOtt/react-ts-sample)
 [![Code Climate](https://codeclimate.com/github/KalleOtt/react-ts-sample/badges/gpa.svg)](https://codeclimate.com/github/KalleOtt/react-ts-sample)
 [![codecov.io](https://codecov.io/github/KalleOtt/react-ts-sample/coverage.svg?branch=master)](https://codecov.io/gh/KalleOtt/react-ts-sample?branch=master)
+![license](https://img.shields.io/github/license/KalleOtt/react-ts-sample.svg)
 
 ### Sample techstack for [React](https://facebook.github.io/react/), [redux](redux.js.org), [redux-saga](https://github.com/yelouafi/redux-saga)/[redux-observable](https://redux-observable.js.org/), [TypeScript](https://github.com/Microsoft/TypeScript) and [webpack](https://github.com/webpack/webpack)
 
