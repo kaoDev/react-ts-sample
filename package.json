@@ -21,14 +21,12 @@
       "\\.(s?css|less)$": "identity-obj-proxy"
     },
     "collectCoverageFrom": [
-      "src/*.{ts,tsx}",
       "src/actions/*.{ts,tsx}",
       "src/components/*.{ts,tsx}",
       "src/containers/*.{ts,tsx}",
       "src/models/*.{ts,tsx}",
       "src/reducers/*.{ts,tsx}",
-      "src/redux/*.{ts,tsx}",
-      "src/store/*.{ts,tsx}"
+      "src/redux/*.{ts,tsx}"
     ],
     "moduleDirectories": [
       "node_modules",
@@ -45,8 +43,10 @@
       "ts",
       "tsx",
       "js",
-      "jsx"
+      "jsx",
+      "json"
     ],
+    "notify": true,
     "testRegex": "src/__tests__/.*\\.test\\.(ts|tsx|js|jsx)$"
   },
   "author": "",

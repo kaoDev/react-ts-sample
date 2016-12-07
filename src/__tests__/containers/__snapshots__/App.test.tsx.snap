@@ -1,0 +1,76 @@
+exports[`App should be rendered Snapshot test 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "height": "600px",
+      "width": "100%",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexGrow": 1,
+        "height": "100%",
+        "justifyContent": "space-around",
+      }
+    }>
+    <div
+      className=""
+      data-react-toolbox="card"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "100%",
+          "margin": "10px",
+          "maxWidth": "800px",
+          "padding": "8px",
+          "width": "calc(50% - 10px)",
+        }
+      }>
+      <Input
+        disabled={undefined}
+        multiline={true}
+        name={undefined}
+        onChange={[Function]}
+        style={
+          Object {
+            "height": "100%",
+            "maxHeight": "100%",
+            "overflow": "auto",
+          }
+        }
+        theme={Object {}}
+        type="text"
+        value="" />
+    </div>
+    <div
+      className=""
+      data-react-toolbox="card"
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "height": "100%",
+          "margin": "10px",
+          "maxWidth": "800px",
+          "padding": "8px",
+          "width": "calc(50% - 10px)",
+        }
+      }>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+        style={
+          Object {
+            "color": "black",
+          }
+        } />
+    </div>
+  </div>
+</div>
+`;

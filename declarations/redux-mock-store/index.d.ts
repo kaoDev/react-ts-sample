@@ -5,6 +5,7 @@
 
 ///<reference types="redux" />
 import * as Redux from 'redux';
+import { Unsubscribe, Reducer } from 'redux';
 
 declare module 'redux-mock-store' {
     export default function createMockStore<T>(middlewares?: Redux.Middleware[]): mockStore<T>;
@@ -16,6 +17,7 @@ declare module 'redux-mock-store' {
         getState(): T;
         getActions(): any[];
         clearActions(): void;
-        subscribe(listener: Function): Function;
+        subscribe(listener: () => void): Unsubscribe;
+        replaceReducer(nextReducer: Reducer<T>): void;
     }
 }
