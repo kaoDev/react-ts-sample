@@ -26,7 +26,8 @@
       "src/containers/*.{ts,tsx}",
       "src/models/*.{ts,tsx}",
       "src/reducers/*.{ts,tsx}",
-      "src/redux/*.{ts,tsx}"
+      "src/redux/*.{ts,tsx}",
+      "src/store/*.{ts,tsx}"
     ],
     "moduleDirectories": [
       "node_modules",
