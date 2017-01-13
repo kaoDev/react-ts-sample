@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -23,15 +22,16 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.scss', '.css'],
-        root: [
-            path.resolve('./src')
+        extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.scss', '.css'],
+        modules: [
+            'node_modules',
+            path.resolve(__dirname, './src')
         ]
     },
 
     plugins: [
-        new ExtractTextPlugin('bundle.css', { allChunks: true }),
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new ExtractTextPlugin({ filename: 'bundle.css', allChunks: true }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js',
@@ -43,7 +43,17 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('development')
             }
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                context: __dirname,
+                postcss: [autoprefixer],
+                sassLoader: {
+                    includePaths: [path.resolve(__dirname, './src')]
+                }
+            }
+        })
+
     ],
 
     module: {
@@ -63,12 +73,11 @@ module.exports = {
             },
             {
                 test: /(\.scss|\.css)$/,
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: 'css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader'
+                })
             }
         ]
-    },
-    postcss: [autoprefixer],
-    sassLoader: {
-        includePaths: [path.resolve(__dirname, './src')]
     }
 };
