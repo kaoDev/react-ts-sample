@@ -13,8 +13,8 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.(ts|tsx)$": "node_modules/typescript-babel-jest",
-      "^.+\\.(js|jsx)$": "node_modules/babel-jest"
+      "^.+\\.(ts|tsx)$": "typescript-babel-jest",
+      "^.+\\.(js|jsx)$": "babel-jest"
     },
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "src/__mocks__/fileMock.js",
