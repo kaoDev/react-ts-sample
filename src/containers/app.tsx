@@ -7,7 +7,6 @@ import { inputChanged } from 'actions/actionCreators';
 import { MarkdownText } from 'components/MarkdownText';
 import { TextArea } from 'components/TextArea';
 import { Card } from 'react-toolbox';
-import 'react-toolbox/lib/commons.scss';
 
 interface IAppProps {
     text: string;
