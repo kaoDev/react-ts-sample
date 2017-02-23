@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`App should be rendered Snapshot test 1`] = `
 <div
   style={
@@ -7,7 +9,8 @@ exports[`App should be rendered Snapshot test 1`] = `
       "height": "600px",
       "width": "100%",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
@@ -16,7 +19,8 @@ exports[`App should be rendered Snapshot test 1`] = `
         "height": "100%",
         "justifyContent": "space-around",
       }
-    }>
+    }
+  >
     <div
       className=""
       data-react-toolbox="card"
@@ -29,7 +33,8 @@ exports[`App should be rendered Snapshot test 1`] = `
           "padding": "8px",
           "width": "calc(50% - 10px)",
         }
-      }>
+      }
+    >
       <Input
         disabled={undefined}
         multiline={true}
@@ -44,7 +49,8 @@ exports[`App should be rendered Snapshot test 1`] = `
         }
         theme={Object {}}
         type="text"
-        value="" />
+        value=""
+      />
     </div>
     <div
       className=""
@@ -58,7 +64,8 @@ exports[`App should be rendered Snapshot test 1`] = `
           "padding": "8px",
           "width": "calc(50% - 10px)",
         }
-      }>
+      }
+    >
       <div
         dangerouslySetInnerHTML={
           Object {
@@ -69,7 +76,8 @@ exports[`App should be rendered Snapshot test 1`] = `
           Object {
             "color": "black",
           }
-        } />
+        }
+      />
     </div>
   </div>
 </div>

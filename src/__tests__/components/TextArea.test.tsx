@@ -12,12 +12,10 @@ describe('TextArea shall render text', () => {
     let tree = component.toJSON();
 
     test('Snapshot test', () => {
-
         expect(tree).toMatchSnapshot();
     });
 
     test('props value should be textValue', () => {
-
         expect(component.getInstance().props.value).toBe(textValue);
     });
 

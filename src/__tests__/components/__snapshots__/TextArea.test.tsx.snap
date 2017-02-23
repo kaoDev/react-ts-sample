@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`TextArea shall render text Snapshot test 1`] = `
 <Input
   disabled={undefined}
@@ -14,5 +16,6 @@ exports[`TextArea shall render text Snapshot test 1`] = `
   theme={Object {}}
   type="text"
   value="# headline
-text" />
+text"
+/>
 `;
