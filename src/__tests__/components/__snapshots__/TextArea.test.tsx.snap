@@ -6,9 +6,11 @@ exports[`TextArea shall render text Snapshot test 1`] = `
   multiline={true}
   name={undefined}
   onChange={[Function]}
+  rows={undefined}
   style={
     Object {
       "height": "100%",
+      "lineHeight": "20px",
       "maxHeight": "100%",
       "overflow": "auto",
     }
