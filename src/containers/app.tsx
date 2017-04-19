@@ -5,7 +5,7 @@ import { ApplicationState } from 'models/applicationState';
 import { inputChanged } from 'actions/actionCreators';
 import { MarkdownText } from 'components/MarkdownText';
 import { TextArea } from 'components/TextArea';
-import { Card } from 'react-toolbox/lib/Card';
+import { Card } from 'react-toolbox/lib/card';
 
 interface IAppProps {
     text: string;
