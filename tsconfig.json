@@ -20,7 +20,8 @@
                 "src/*",
                 "declarations/*"
             ]
-        }
+        },
+        "experimentalDecorators": true
     },
     "include": [
         "src/**/*.ts",

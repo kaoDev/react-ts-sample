@@ -1,40 +1,38 @@
 import * as React from 'react';
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import { Store, Dispatch, bindActionCreators } from 'redux';
+import { PureComponent } from 'react';
+import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from 'models/applicationState';
 import { inputChanged } from 'actions/actionCreators';
 import { MarkdownText } from 'components/MarkdownText';
 import { TextArea } from 'components/TextArea';
-import { Card } from 'react-toolbox';
+import { Card } from 'react-toolbox/lib/Card';
 
 interface IAppProps {
     text: string;
     inputChanged: typeof inputChanged;
-    dispatch: Dispatch<Store<ApplicationState>>;
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>) => {
-    return { inputChanged: bindActionCreators(inputChanged, dispatch) };
+const mapDispatchToProps = {
+    inputChanged
 };
 
-const mapStateToProps = (state: ApplicationState) => {
+const mapStateToProps: MapStateToProps<{ text: string }, {}> = (state: ApplicationState) => {
     return {
         text: state.text
     };
 };
 
-class AppComponent extends Component<IAppProps, {}> {
+class AppComponent extends PureComponent<IAppProps, {}> {
 
     private onValueChanged = (value: string) => {
-        const {inputChanged} = this.props;
+        const { inputChanged } = this.props;
         if (inputChanged) {
             inputChanged(value);
         }
     }
 
     render() {
-        const {text} = this.props;
+        const { text } = this.props;
 
         const columnStyle: React.CSSProperties = {
             display: 'flex',
@@ -63,7 +61,7 @@ class AppComponent extends Component<IAppProps, {}> {
             <div style={columnStyle} >
                 <div style={editorWrapperStyle}>
                     <Card style={paperStyle}>
-                        <TextArea onChange={this.onValueChanged} value={text} />
+                        <TextArea rows={27} onChange={this.onValueChanged} value={text} />
                     </Card>
                     <Card style={paperStyle}>
                         <MarkdownText text={text} />

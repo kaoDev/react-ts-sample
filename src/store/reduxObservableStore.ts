@@ -1,8 +1,8 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { createEpicMiddleware } from 'redux-observable';
-import { rootEpic } from 'redux/observable/root';
-import { reduceApplicationState } from 'reducers/applicationReducer';
-import { ApplicationState } from 'models/applicationState';
+import {ApplicationState} from 'models/applicationState';
+import {reduceApplicationState} from 'reducers/applicationReducer';
+import {applyMiddleware, compose, createStore} from 'redux';
+import {createEpicMiddleware} from 'redux-observable';
+import {rootEpic} from 'redux/observable/root';
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
@@ -15,4 +15,5 @@ if (module.hot) {
     });
 }
 
-export const createApplicationStore = () => createStore<ApplicationState>(reduceApplicationState, composeEnhancers(applyMiddleware(epicMiddleware)));
+export function createApplicationStore(){return createStore<ApplicationState>(
+    reduceApplicationState, composeEnhancers(applyMiddleware(epicMiddleware)))};

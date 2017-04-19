@@ -51,7 +51,8 @@
             "check-operator",
             "check-separator",
             "check-type"
-        ]
+        ],
+        "prefer-function-over-method": true
     },
     "jsRules": {
         "indent": [
