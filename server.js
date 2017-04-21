@@ -8,6 +8,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.resolve('./index.html'));
 });
 
-app.listen(3000, () => {
-    console.log('running on port 3000');
+server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", () => {
+    var addr = server.address();
+    console.log("Chat server listening at", addr.address + ":" + addr.port);
 });
