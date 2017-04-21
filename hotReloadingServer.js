@@ -8,10 +8,12 @@ const app = new WebpackDevServer(webpack(config), {
     historyApiFallback: true
 });
 
-app.listen(process.env.PORT || 3000, process.env.IP || "localhost", (err, result) => {
+const address = process.env.IP || "localhost";
+const port = process.env.PORT || 3000;
+
+app.listen(port, address, (err, result) => {
     if (err) {
         return console.log(err);
     }
-    const addr = app.address();
-    console.log("Chat server listening at", addr.address + ":" + addr.port);
+    console.log(`Chat server listening at ${address}:${port}`);
 });
