@@ -1,22 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextArea shall render text Snapshot test 1`] = `
-<Input
-  disabled={undefined}
-  multiline={true}
-  name={undefined}
+<textarea
+  className="css-ejnw7b"
   onChange={[Function]}
-  rows={undefined}
-  style={
-    Object {
-      "height": "100%",
-      "lineHeight": "20px",
-      "maxHeight": "100%",
-      "overflow": "auto",
-    }
-  }
-  theme={Object {}}
-  type="text"
   value="# headline
 text"
 />

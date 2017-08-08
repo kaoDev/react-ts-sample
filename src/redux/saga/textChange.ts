@@ -1,14 +1,15 @@
-import { delay, takeLatest } from 'redux-saga';
-import { put, call } from 'redux-saga/effects';
-import { Action } from 'redux-actions';
-import { textChanged } from 'actions/actionCreators';
-import { INPUT_CHANGED } from 'actions/actionTypes';
+import { delay, takeLatest } from 'redux-saga'
+import { put, call } from 'redux-saga/effects'
+import { Action, ActionType, InputChangedAction } from 'actions/actionTypes'
+import { textChanged } from 'actions/actionCreators'
 
-export const changeTextAsync = function* (textAction: Action<string>) {
-    yield call(delay, 150);
-    yield put(textChanged(textAction.payload || ''));
+export const changeTextAsync = function*(action: Action) {
+  if (action.type === ActionType.INPUT_CHANGED) {
+    yield call(delay, 150)
+    yield put(textChanged(action.input))
+  }
 }
 
-export const watchTextChange = function* () {
-    yield takeLatest(INPUT_CHANGED, changeTextAsync);
+export const watchTextChange = function*() {
+  yield takeLatest(ActionType.INPUT_CHANGED, changeTextAsync)
 }

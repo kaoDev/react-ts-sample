@@ -1,6 +1,4 @@
-import { combineEpics } from 'redux-observable';
-import { textChangedEpic } from './textChange';
+import { combineEpics } from 'redux-observable'
+import { textChangedEpic } from './textChange'
 
-export const rootEpic = combineEpics(
-    textChangedEpic
-);
+export const rootEpic = combineEpics(textChangedEpic)

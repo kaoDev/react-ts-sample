@@ -1,11 +1,8 @@
-import * as actionTypes from 'actions/actionTypes';
+import { ActionType } from 'actions/actionTypes'
 
 test('every action type should have the own name as string value', () => {
-
-    const allActions = actionTypes as any;
-
-    for (const type in actionTypes) {
-        expect(allActions[type]).toBeDefined();
-        expect(type).toEqual(allActions[type] as string);
-    }
-});
+  for (const type in ActionType) {
+    expect(ActionType[type]).toBeDefined()
+    expect(type).toEqual(ActionType[type] as string)
+  }
+})

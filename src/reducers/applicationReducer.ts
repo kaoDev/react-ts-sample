@@ -1,13 +1,14 @@
-import { Action } from 'redux-actions';
-import { ApplicationState, initialAppState } from 'models/applicationState';
-import * as types from 'actions/actionTypes';
+import { Action, ActionType } from 'actions//actionTypes'
+import { ApplicationState, initialAppState } from 'models/applicationState'
 
-export function reduceApplicationState(state: ApplicationState = initialAppState, action: Action<any>) {
-    switch (action.type) {
-        case types.TEXT_CHANGED:
-            const textAction = action as Action<string>;
-            return new ApplicationState(textAction.payload || '');
-        default:
-            return state;
-    }
-};
+export const reduceApplicationState = (
+  state: ApplicationState = initialAppState,
+  action: Action
+) => {
+  switch (action.type) {
+    case ActionType.TEXT_CHANGED:
+      return { text: action.text || '' }
+    default:
+      return state
+  }
+}

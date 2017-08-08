@@ -22,8 +22,7 @@ exports[`App should be rendered Snapshot test 1`] = `
     }
   >
     <div
-      className=""
-      data-react-toolbox="card"
+      className="css-1xemh4n"
       style={
         Object {
           "boxSizing": "border-box",
@@ -35,28 +34,14 @@ exports[`App should be rendered Snapshot test 1`] = `
         }
       }
     >
-      <Input
-        disabled={undefined}
-        multiline={true}
-        name={undefined}
+      <textarea
+        className="css-ejnw7b"
         onChange={[Function]}
-        rows={27}
-        style={
-          Object {
-            "height": "100%",
-            "lineHeight": "20px",
-            "maxHeight": "100%",
-            "overflow": "auto",
-          }
-        }
-        theme={Object {}}
-        type="text"
         value=""
       />
     </div>
     <div
-      className=""
-      data-react-toolbox="card"
+      className="css-1xemh4n"
       style={
         Object {
           "boxSizing": "border-box",
@@ -69,16 +54,13 @@ exports[`App should be rendered Snapshot test 1`] = `
       }
     >
       <div
+        className="css-1dskxwt"
         dangerouslySetInnerHTML={
           Object {
             "__html": "",
           }
         }
-        style={
-          Object {
-            "color": "black",
-          }
-        }
+        style={undefined}
       />
     </div>
   </div>

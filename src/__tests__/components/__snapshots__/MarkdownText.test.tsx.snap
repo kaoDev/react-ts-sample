@@ -2,6 +2,7 @@
 
 exports[`MarkdownText shall render text Snapshot test 1`] = `
 <div
+  className="css-1dskxwt"
   dangerouslySetInnerHTML={
     Object {
       "__html": "<h1 id=\\"headline\\">headline</h1>
@@ -9,10 +10,6 @@ exports[`MarkdownText shall render text Snapshot test 1`] = `
     ",
     }
   }
-  style={
-    Object {
-      "color": "black",
-    }
-  }
+  style={undefined}
 />
 `;

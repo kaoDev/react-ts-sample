@@ -1,11 +1,7 @@
-export class ApplicationState {
-    readonly text: string;
-
-    constructor(text: string) {
-        this.text = text;
-    }
+export type ApplicationState = {
+  readonly text: string
 }
 
-export const initialAppState = new ApplicationState(
-    '# initial headline 2'
-);
+export const initialAppState: ApplicationState = {
+  text: '# initial headline 2',
+}

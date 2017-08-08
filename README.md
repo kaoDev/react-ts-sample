@@ -3,7 +3,7 @@
 [![codecov.io](https://codecov.io/github/KalleOtt/react-ts-sample/coverage.svg?branch=master)](https://codecov.io/gh/KalleOtt/react-ts-sample?branch=master)
 ![license](https://img.shields.io/github/license/KalleOtt/react-ts-sample.svg)
 
-### Sample techstack for [React](https://facebook.github.io/react/), [redux](redux.js.org), [redux-saga](https://github.com/yelouafi/redux-saga)/[redux-observable](https://redux-observable.js.org/), [TypeScript](https://github.com/Microsoft/TypeScript) and [webpack](https://github.com/webpack/webpack)
+### Sample techstack for [React](https://facebook.github.io/react/), [redux](redux.js.org), [redux-saga](https://github.com/yelouafi/redux-saga)/[redux-observable](https://redux-observable.js.org/), [TypeScript](https://github.com/Microsoft/TypeScript), [webpack](https://github.com/webpack/webpack)
 
 As a usecase here is an simple markdown writer implementation, 
 to bring in an async scenario the user input is debounced.
@@ -21,6 +21,6 @@ stores available:
 startup sample:
 
 ```
-npm install
-npm start
+yarn install
+yarn start
 ```

@@ -1,25 +1,31 @@
-import * as marked from 'marked';
-import * as React from 'react';
-import { CSSProperties } from 'react';
+import * as marked from 'marked'
+import * as React from 'react'
+import { CSSProperties } from 'react'
+import glamorous from 'glamorous'
+import { rgba } from 'rgba-string'
 
 interface MarkdownTextProps {
-    readonly text: string;
-    style?: CSSProperties;
+  readonly text: string
+  style?: CSSProperties
 }
 
 marked.setOptions({
-    gfm: true,
-    sanitize: false
-});
+  gfm: true,
+  sanitize: false,
+})
 
-export function MarkdownText(props: MarkdownTextProps) {
-    const parsedMarkdown = marked.parse(props.text || '');
+const TextDiv = glamorous.div({
+  color: rgba(0x1e1e1e),
+  fontFamily: 'Lato, sans-serif',
+})
 
-    const mergedStyle: React.CSSProperties = Object.assign({
-        color: 'black'
-    }, props.style);
+export const MarkdownText = (props: MarkdownTextProps) => {
+  const parsedMarkdown = marked.parse(props.text || '')
 
-    return (
-        <div style={mergedStyle} dangerouslySetInnerHTML={{ __html: parsedMarkdown }} />
-    );
+  return (
+    <TextDiv
+      style={props.style}
+      dangerouslySetInnerHTML={{ __html: parsedMarkdown }}
+    />
+  )
 }
