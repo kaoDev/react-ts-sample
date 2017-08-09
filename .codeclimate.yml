@@ -6,12 +6,6 @@ engines:
       languages:
       - javascript
       - typescript
-  eslint:
-    enabled: true
-  tslint:
-    enabled: true
-  fixme:
-    enabled: true
 ratings:
   paths:
   - "**.js"
