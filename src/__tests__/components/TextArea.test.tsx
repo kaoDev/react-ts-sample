@@ -33,4 +33,19 @@ describe('TextArea shall render text', () => {
 
     expect(textArea.state.value).toEqual('next text')
   })
+
+  test('state should update on change handler', () => {
+    const textArea = component.getInstance() as TextArea
+    const nextText = 'new text'
+
+    textArea.changeHandler(
+      { currentTarget: { value: nextText } } as React.FormEvent<
+        HTMLTextAreaElement
+      >
+    )
+
+    expect(onChange).toBeCalledWith(nextText)
+
+    expect(textArea.state.value).toEqual(nextText)
+  })
 })

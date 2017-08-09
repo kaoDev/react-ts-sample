@@ -47,7 +47,7 @@ export class TextArea extends PureComponent<TextAreaProps, TextAreaState> {
     this.setState({ value: value || '' })
   }
 
-  private changeHandler: React.FormEventHandler<HTMLTextAreaElement> = ({
+  changeHandler: React.FormEventHandler<HTMLTextAreaElement> = ({
     currentTarget: { value },
   }) => {
     this.setState({ value })

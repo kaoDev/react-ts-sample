@@ -47,39 +47,40 @@ type FindOptions = {
 export type Predicate = (node: ReactTestInstance<any>) => boolean | undefined
 
 export interface ReactTestInstance<P> {
-  toJSON(): ReactTestRendererJSON
-  unmount(nextElement?: ReactElement<P>): void
-  update(nextElement: ReactElement<P>): void
-  getInstance(): ReactInstance
-
-  type(): any
-
-  props(): P
-
-  parent(): ReactTestInstance<any> | undefined
-
-  children(): Array<ReactTestInstance<any> | string>
   // Custom search functions
-  find(predicate: Predicate): ReactTestInstance<any>
+  find(predicate: Predicate): React.ReactElement<any>
 
-  findByType(type: any): ReactTestInstance<any>
+  findByType<P>(type: React.ComponentType<P>): React.ReactElement<P>
 
   findByProps(props: Object): ReactTestInstance<any>
 
   findAll(
     predicate: Predicate,
     options?: FindOptions
-  ): Array<ReactTestInstance<any>>
+  ): Array<React.ReactElement<any>>
 
-  findAllByType(type: any, options?: FindOptions): Array<ReactTestInstance<any>>
+  findAllByType<P>(
+    type: React.ComponentType<P>,
+    options?: FindOptions
+  ): Array<React.ReactElement<P>>
 
   findAllByProps(
     props: Object,
     options?: FindOptions
-  ): Array<ReactTestInstance<any>>
+  ): Array<React.ReactElement<any>>
 }
+
+export type RenderedComponent<P> = {
+  root: ReactTestInstance<P>
+
+  toJSON(): ReactTestRendererJSON
+  unmount(): void
+  update(nextElement: ReactElement<P>): void
+  getInstance(): ReactInstance
+}
+
 // https://github.com/facebook/react/blob/master/src/renderers/testing/ReactTestMount.js#L155
 export function create<T>(
   nextElement: ReactElement<T>,
   options?: TestRendererOptions
-): ReactTestInstance<T>
+): RenderedComponent<T>

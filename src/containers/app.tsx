@@ -25,12 +25,10 @@ const mapStateToProps: MapStateToProps<{ text: string }, {}> = (
   }
 }
 
-class AppComponent extends PureComponent<IAppProps, {}> {
-  private onValueChanged = (value: string) => {
+export class AppComponent extends PureComponent<IAppProps, {}> {
+  onValueChanged = (value: string) => {
     const { inputChanged } = this.props
-    if (inputChanged) {
-      inputChanged(value)
-    }
+    inputChanged(value)
   }
 
   render() {
