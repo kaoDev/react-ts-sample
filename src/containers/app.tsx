@@ -7,8 +7,9 @@ import { inputChanged } from 'actions/actionCreators'
 import { MarkdownText } from 'components/MarkdownText'
 import { TextArea } from 'components/TextArea'
 import { Card } from 'components/Card'
+import glamorous from 'glamorous'
 
-interface IAppProps {
+type IAppProps = {
   text: string
   inputChanged: (input: string) => Action
 }
@@ -25,6 +26,29 @@ const mapStateToProps: MapStateToProps<{ text: string }, {}> = (
   }
 }
 
+const Column = glamorous.div({
+  display: 'flex',
+  flexDirection: 'column',
+  height: '600px',
+  width: '100%',
+})
+
+const EditorWrapper = glamorous.div({
+  display: 'flex',
+  height: '100%',
+  flexGrow: 1,
+  justifyContent: 'space-around',
+})
+
+const PaperCard = glamorous(Card)({
+  height: '100%',
+  margin: '10px',
+  padding: '8px',
+  width: 'calc(50% - 10px)',
+  maxWidth: '800px',
+  boxSizing: 'border-box',
+})
+
 export class AppComponent extends PureComponent<IAppProps, {}> {
   onValueChanged = (value: string) => {
     const { inputChanged } = this.props
@@ -34,40 +58,17 @@ export class AppComponent extends PureComponent<IAppProps, {}> {
   render() {
     const { text } = this.props
 
-    const columnStyle: React.CSSProperties = {
-      display: 'flex',
-      flexDirection: 'column',
-      height: '600px',
-      width: '100%',
-    }
-
-    const editorWrapperStyle: React.CSSProperties = {
-      display: 'flex',
-      height: '100%',
-      flexGrow: 1,
-      justifyContent: 'space-around',
-    }
-
-    const paperStyle: React.CSSProperties = {
-      height: '100%',
-      margin: '10px',
-      padding: '8px',
-      width: 'calc(50% - 10px)',
-      maxWidth: '800px',
-      boxSizing: 'border-box',
-    }
-
     return (
-      <div style={columnStyle}>
-        <div style={editorWrapperStyle}>
-          <Card level={2} style={paperStyle}>
+      <Column>
+        <EditorWrapper>
+          <PaperCard level={2}>
             <TextArea onChange={this.onValueChanged} value={text} />
-          </Card>
-          <Card level={2} style={paperStyle}>
+          </PaperCard>
+          <PaperCard level={2}>
             <MarkdownText text={text} />
-          </Card>
-        </div>
-      </div>
+          </PaperCard>
+        </EditorWrapper>
+      </Column>
     )
   }
 }

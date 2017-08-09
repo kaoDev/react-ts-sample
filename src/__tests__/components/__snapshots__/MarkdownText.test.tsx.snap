@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MarkdownText shall render text Snapshot test 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  color: rgba(30, 30, 30, 1);
+  font-family: Lato, sans-serif;
+}
+
 <div
-  className="css-1dskxwt"
+  className="glamor-0"
   dangerouslySetInnerHTML={
     Object {
       "__html": "<h1 id=\\"headline\\">headline</h1>
@@ -10,6 +16,5 @@ exports[`MarkdownText shall render text Snapshot test 1`] = `
     ",
     }
   }
-  style={undefined}
 />
 `;

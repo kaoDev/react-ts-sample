@@ -4,9 +4,9 @@ import { CSSProperties } from 'react'
 import glamorous from 'glamorous'
 import { rgba } from 'rgba-string'
 
-interface MarkdownTextProps {
+type MarkdownTextProps = {
   readonly text: string
-  style?: CSSProperties
+  readonly style?: CSSProperties
 }
 
 marked.setOptions({
@@ -23,9 +23,6 @@ export const MarkdownText = (props: MarkdownTextProps) => {
   const parsedMarkdown = marked.parse(props.text || '')
 
   return (
-    <TextDiv
-      style={props.style}
-      dangerouslySetInnerHTML={{ __html: parsedMarkdown }}
-    />
+    <TextDiv {...props} dangerouslySetInnerHTML={{ __html: parsedMarkdown }} />
   )
 }

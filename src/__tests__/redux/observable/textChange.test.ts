@@ -1,5 +1,5 @@
 import configureMockStore from 'redux-mock-store'
-import { IStore } from 'redux-mock-store'
+import { MockStore } from 'redux-mock-store'
 import { createEpicMiddleware } from 'redux-observable'
 import { textChangedEpic } from 'redux/observable/textChange'
 import { inputChanged, textChanged } from 'actions/actionCreators'
@@ -9,7 +9,7 @@ const epicMiddleware = createEpicMiddleware(textChangedEpic)
 const mockStore = configureMockStore([epicMiddleware])
 
 describe('input is debounced', () => {
-  let store: IStore<{}>
+  let store: MockStore<{}>
 
   beforeEach(() => {
     store = mockStore()

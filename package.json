@@ -16,16 +16,12 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "src/__tests__/.*\\.test\\.(ts|tsx|js|jsx)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "src/__mocks__/fileMock.js",
       "\\.(s?css|less)$": "identity-obj-proxy"
     },
+    "snapshotSerializers": ["jest-glamor-react"],
     "collectCoverageFrom": [
       "src/actions/*.{ts,tsx}",
       "src/components/*.{ts,tsx}",
@@ -35,10 +31,7 @@
       "src/redux/*.{ts,tsx}",
       "src/store/*.{ts,tsx}"
     ],
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ]
+    "moduleDirectories": ["node_modules", "src"]
   },
   "author": "",
   "license": "MIT",
@@ -51,6 +44,7 @@
     "@types/react-redux": "^4.4.47",
     "@types/redux-actions": "^1.2.7",
     "@types/redux-devtools": "^3.0.38",
+    "@types/redux-mock-store": "^0.0.9",
     "@types/webpack": "^3.0.6",
     "awesome-typescript-loader": "^3.2.2",
     "express": "^4.15.4",
@@ -59,6 +53,7 @@
     "identity-obj-proxy": "^3.0.0",
     "immutability-helper": "^2.3.0",
     "jest": "^20.0.4",
+    "jest-glamor-react": "^3.1.0",
     "marked": "^0.3.6",
     "react": "^16.0.0-beta.5",
     "react-dom": "^16.0.0-beta.5",

@@ -25,7 +25,7 @@ const MaterialTextArea = glamorous.textarea({
   },
 })
 
-export interface TextAreaProps {
+export type TextAreaProps = {
   onChange: (newValue: string) => void
   disabled?: boolean
   name?: string
@@ -33,7 +33,7 @@ export interface TextAreaProps {
   style?: React.CSSProperties
 }
 
-interface TextAreaState {
+type TextAreaState = {
   value: string
 }
 
