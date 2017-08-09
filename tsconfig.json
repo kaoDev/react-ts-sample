@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
     "inlineSourceMap": true,
     "inlineSources": true,
     "sourceMap": false,

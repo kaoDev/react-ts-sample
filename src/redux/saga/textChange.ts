@@ -1,6 +1,6 @@
 import { delay, takeLatest } from 'redux-saga'
 import { put, call } from 'redux-saga/effects'
-import { Action, ActionType, InputChangedAction } from 'actions/actionTypes'
+import { Action, ActionType } from 'actions/actionTypes'
 import { textChanged } from 'actions/actionCreators'
 
 export const changeTextAsync = function*(action: Action) {

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { PureComponent, CSSProperties } from 'react'
+import { PureComponent } from 'react'
 import glamorous from 'glamorous'
 
 const MaterialTextArea = glamorous.textarea({
