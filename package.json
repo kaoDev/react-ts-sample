@@ -17,12 +17,19 @@
     },
     "mapCoverage": true,
     "testRegex": "src/__tests__/.*\\.test\\.(ts|tsx|js|jsx)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "json"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "src/__mocks__/fileMock.js",
       "\\.(s?css|less)$": "identity-obj-proxy"
     },
-    "snapshotSerializers": ["jest-glamor-react"],
+    "snapshotSerializers": [
+      "jest-glamor-react"
+    ],
     "collectCoverageFrom": [
       "src/actions/*.{ts,tsx}",
       "src/components/*.{ts,tsx}",
@@ -32,7 +39,10 @@
       "src/redux/*.{ts,tsx}",
       "src/store/*.{ts,tsx}"
     ],
-    "moduleDirectories": ["node_modules", "src"]
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   },
   "author": "",
   "license": "MIT",
@@ -49,8 +59,8 @@
     "@types/webpack": "^3.0.6",
     "awesome-typescript-loader": "^3.2.2",
     "express": "^4.15.4",
-    "glamor": "^2.20.39",
-    "glamorous": "^4.1.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.2.1",
     "identity-obj-proxy": "^3.0.0",
     "immutability-helper": "^2.3.0",
     "jest": "^20.0.4",
